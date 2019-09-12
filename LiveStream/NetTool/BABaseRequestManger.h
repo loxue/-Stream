@@ -34,6 +34,10 @@ typedef BABaseNetResponse *(^ResponseFormat)(BABaseNetResponse *response);
  data 对应的二进制数据
  name 服务端需要参数
  */
-- (void)upload:(NSString *)urlString parameters:(id)parameters formDataBlock:(void(^)(id<AFMultipartFormData> formData))formDataBlock progress:(void (^)(NSProgress *progress))progress completion:(void (^)(BABaseNetResponse *response))completion;
+- (void)upload:(NSString *)urlString
+    parameters:(id)parameters
+ formDataBlock:(void(^)(id<AFMultipartFormData> formData))formDataBlock
+      progress:(void (^)(NSProgress *progress))progress
+    completion:(void (^)(BABaseNetResponse *response))completion;
 
 @end

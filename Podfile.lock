@@ -14,13 +14,45 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
+  - GPUImage (0.1.7)
+  - Masonry (1.1.0)
+  - MJExtension (3.0.13)
+  - OpenShare (0.0.1)
+  - RDVTabBarController (1.2.0)
+  - UMCCommon (2.0.1)
+  - UMCSecurityPlugins (1.0.6)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 3.0)
+  - GPUImage
+  - Masonry
+  - MJExtension (= 3.0.13)
+  - OpenShare
+  - RDVTabBarController
+  - UMCCommon
+  - UMCSecurityPlugins
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - GPUImage
+    - Masonry
+    - MJExtension
+    - OpenShare
+    - RDVTabBarController
+    - UMCCommon
+    - UMCSecurityPlugins
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
+  RDVTabBarController: b6d63a7fc49b00568ba07255c6171edc737ad833
+  UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
 
-PODFILE CHECKSUM: d4fc9ada6c3df0b7bbd2ea634736e71d23944792
+PODFILE CHECKSUM: 7a982ee7ca6faedda4a0b17f62cf8ed3ac3f0524
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

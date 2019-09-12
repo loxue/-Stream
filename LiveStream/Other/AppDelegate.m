@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "OpenShareHeader.h"
+#import "BAViewControllerHelper.h"
 
 @interface AppDelegate ()
 
@@ -16,14 +18,41 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
     
-    [self.window makeKeyAndVisible];
+    [self registscheme];
+    
+    [self loadWindow];
+    
     return YES;
 }
 
+#pragma mark - regist scheme
+- (void)registscheme {
+    // 注册scheme
+    [OpenShare connectQQWithAppId:@"1103194207"];
+    [OpenShare connectWeiboWithAppKey:@"402180334"];
+//    [OpenShare connectWeixinWithAppId:@"wxd930ea5d5a258f4f" miniAppId:@"gh_d43f693ca31f"];
+    [OpenShare connectRenrenWithAppId:@"228525" AndAppKey:@"1dd8cba4215d4d4ab96a49d3058c1d7f"];
+    [OpenShare connectAlipay];//支付宝参数都是服务器端生成的，这里不需要key.
+}
+
+#pragma mark - load window
+- (void)loadWindow {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.tabBarController = [BAViewControllerHelper createTabBarController];
+    self.window.rootViewController = self.tabBarController;
+    [self.window makeKeyAndVisible];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    // 添加回调
+    if ([OpenShare handleOpenURL:url]) {
+        return YES;
+    }
+    return YES;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

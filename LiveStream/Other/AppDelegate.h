@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+API_AVAILABLE(ios(10.0))
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (nonatomic, strong) RDVTabBarController *tabBarController;
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 

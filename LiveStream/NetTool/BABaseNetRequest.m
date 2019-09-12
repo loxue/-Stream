@@ -13,7 +13,7 @@
 #pragma GET METHOD
 - (void)GET:(NSString *)URLString parameters:(id)parameters completion:(void(^)(BABaseNetResponse *response))completion
 {
-    BAWeakSelf(self);
+    BAWEAK_SELF(self);
     [[BABaseRequestManger sharedManager] GET:URLString parameters:parameters completion:^(BABaseNetResponse *response) {
         if (!weakself) {
             return ;
@@ -25,7 +25,7 @@
 #pragma POST METHOD
 - (void)POST:(NSString *)URLString parameters:(id)parameters completion:(void(^)(BABaseNetResponse *response))completion
 {
-    BAWeakSelf(self);
+    BAWEAK_SELF(self);
     [[BABaseRequestManger sharedManager] POST:URLString parameters:parameters completion:^(BABaseNetResponse *response) {
         if (!weakself) {
             return ;

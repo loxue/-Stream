@@ -9,14 +9,32 @@
 #ifndef BABaseInterface_pch
 #define BABaseInterface_pch
 
-// 网络
+/** 网络 */
 #import "BANetAPI.h"
 #import "BABaseRequestManger.h"
 
-// 常用宏
+/** 常用宏 */
 #import "BACommonMacro.h"
 
-// 常用常量
+/** 常用常量 */
 #import "BACommonConst.h"
+
+/** 扩展button+color */
+#import "UIButton+Extensions.h"
+#import "UIColor+Extensions.h"
+
+/**  工具类   */
+#import "ViewUtility.h"
+/** mjexsition */
+#import "MJExtension.h"
+/** RDVTabBarController */
+#import "RDVTabBarController.h"
+#import "RDVTabBarItem.h"
+
+/**  UI适配   */
+#import "Masonry.h"
+
+/** 相机controller */
+#import "BACameraController.h"
 
 #endif /* BABaseInterface_pch */
